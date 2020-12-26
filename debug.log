@@ -1,0 +1,4 @@
+[1205/195701.469:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[1208/112223.968:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[1226/111518.655:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[1226/141318.246:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\hachimon\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\9efcfac6-8c96-42f3-a673-c780ea9f6014: Системе не удается найти указанный путь. (0x3)

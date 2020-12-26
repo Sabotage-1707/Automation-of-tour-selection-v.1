@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jasperreports">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../Jaspersoft/Jaspersoft Studio-6.16.0/configuration/org.eclipse.osgi/68/0/.cp/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../Download/jasperreports-6.15.0-project/jasperreports-6.15.0/src" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../Jaspersoft/Jaspersoft Studio-6.16.0/configuration/org.eclipse.osgi/68/0/.cp/lib" recursive="false" />
+  </library>
+</component>

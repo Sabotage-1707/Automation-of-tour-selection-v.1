@@ -1,0 +1,16 @@
+{
+	"1": ["Начальная... Требуется Advanced-лицензия!", "index.htm", []],
+	"2": ["1. Реги... Требуется Advanced-лицензия!", "registratsiya.htm", []],
+	"3": ["1.1. Вход в... Требуется Advanced-лицензия!", "vkhod_v_prilozhenie.htm", [1]],
+	"4": ["1.2. Вход в си... Требуется Advanced-лицензия!", "vkhod_v_sistemu_kak_admin.htm", [1]],
+	"5": ["2. Пои... Требуется Advanced-лицензия!", "poisk_tura.htm", []],
+	"6": ["3. Филь... Требуется Advanced-лицензия!", "filtr_turov.htm", []],
+	"7": ["4. Сор... Требуется Advanced-лицензия!", "sortirovka.htm", []],
+	"8": ["5. Поку... Требуется Advanced-лицензия!", "pokupka_tura.htm", []],
+	"9": ["6. Ак... Требуется Advanced-лицензия!", "akkaunt_.htm", []],
+	"10": ["6.1. Редактиро... Требуется Advanced-лицензия!", "redaktirovanie_akkaunta.htm", [6]],
+	"11": ["7. О... Требуется Advanced-лицензия!", "otchety.htm", []],
+	"12": ["7.1. R... Требуется Advanced-лицензия!", "report_1.htm", [7]],
+	"13": ["7.2. R... Требуется Advanced-лицензия!", "report_2.htm", [7]],
+	"14": ["8. Выход из... Требуется Advanced-лицензия!", "vykhod_iz_prilozheniya.htm", []]
+}

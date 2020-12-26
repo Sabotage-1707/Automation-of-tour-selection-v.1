@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Toursim2" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="e9bb1a27-f975-4aa4-98f9-75524c5daafa">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TourismAdapter"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "TursOfClients".id,
+	Name,
+	"TursOfClients"."IdTure",
+	BukingDate
+FROM "TursOfClients"
+	Join "Clients" ON 
+	  ( 
+	 "Clients".id = "TursOfClients"."IdClient") 
+	Join "Turs" ON 
+	  ( 
+	 "TursOfClients"."IdTure" = "Turs".id) 
+WHERE 
+	 "Turs".DateStart BETWEEN GETDATE() AND DATEADD(mm,3,GETDATE())]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="net.sf.jasperreports.sql.field.column.index" value="1"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="net.sf.jasperreports.sql.field.column.index" value="2"/>
+	</field>
+	<field name="IdTure" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IdTure"/>
+		<property name="com.jaspersoft.studio.field.label" value="IdTure"/>
+		<property name="net.sf.jasperreports.sql.field.column.index" value="3"/>
+	</field>
+	<field name="BukingDate" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BukingDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="BukingDate"/>
+		<property name="net.sf.jasperreports.sql.field.column.index" value="4"/>
+	</field>
+	<background>
+		<band height="822" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="722" width="105" height="100" forecolor="#666666" backcolor="#666666" uuid="58048a65-569d-454e-b6dd-f3bb46c94ee3"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000" uuid="0f40ce36-78f2-49e5-adf5-8855d6516e74"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000" uuid="e06a687c-0f3f-4451-a45e-f88c505ba589"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" uuid="ab96a4b0-8a0d-4ae2-8695-16868926ec2b"/>
+				</line>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="152" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="555" height="115" uuid="524767a9-e7e5-4041-9b08-5a7210b38e22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Отчет по забронированным турам на следующий квартал]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="5" width="555" height="20" backcolor="#666666" uuid="eb0fefed-b830-492b-a0c9-ec23411537a7"/>
+				<staticText>
+					<reportElement x="0" y="0" width="80" height="20" uuid="92db87a8-a604-4400-8e21-effb299be9b3"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[id]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="80" y="0" width="140" height="20" uuid="ffc6b104-807c-4fd1-9b41-2e9344027157"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Имя клиента]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="220" y="0" width="100" height="20" uuid="94114d13-2395-41d6-b856-eeaa417cec7e"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Номер тура]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="320" y="0" width="100" height="20" uuid="e5120cc8-a024-4b39-ae1b-94e26965f7ec"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Дата заказа]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="20" width="555" height="1" uuid="2b97af27-2a1e-491f-a0f4-b2549a3510ee"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<frame>
+				<reportElement x="0" y="0" width="555" height="24" uuid="5d75be3e-ea39-4b96-baf8-b49497315044"/>
+				<textField>
+					<reportElement x="0" y="0" width="80" height="20" uuid="4b35cb65-a8b2-4ba2-87b3-595a4adab0ea"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="0" width="140" height="21" uuid="33004769-87dd-4806-a9e4-53dee77e8463"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="220" y="0" width="100" height="20" uuid="f6a9af7c-656c-4aa8-847d-1cf0b64af457"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{IdTure}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="320" y="0" width="100" height="20" uuid="8dedfc1d-ead0-4e02-b009-2fb0be99b3d3"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{BukingDate}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="420" y="21" width="135" height="20" backcolor="#666666" uuid="a09b92d4-9345-4c03-99b5-ef627a1ace58"/>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="100" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="424" y="0" width="131" height="20" forecolor="#000000" uuid="f8570c2f-4404-4725-885a-4eb3c26abb4a"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

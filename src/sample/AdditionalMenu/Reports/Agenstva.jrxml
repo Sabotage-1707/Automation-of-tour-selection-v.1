@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Tourism3" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="e9bb1a27-f975-4aa4-98f9-75524c5daafa">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TourismAdapter"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[Select   dbo."TursOfClients"."FinalPrice",   dbo."TursOfClients"."BukingDate", dbo."Companies"."Profit", dbo."Companies"."CompanyName" 
+from    dbo."TursOfClients" 
+Join  dbo."Turs" On  (dbo."TursOfClients"."IdTure" =  dbo."Turs".id )
+Join  dbo."TursOfCompanies" On( dbo."TursOfCompanies"."IdTure" =  dbo."Turs".id)
+Join  dbo."Companies" On( dbo."TursOfCompanies"."IdCompany" =  dbo."Companies".id  )
+Order By CompanyName]]>
+	</queryString>
+	<field name="FinalPrice" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="FinalPrice"/>
+		<property name="com.jaspersoft.studio.field.label" value="FinalPrice"/>
+	</field>
+	<field name="BukingDate" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BukingDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="BukingDate"/>
+	</field>
+	<field name="Profit" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="Profit"/>
+		<property name="com.jaspersoft.studio.field.label" value="Profit"/>
+	</field>
+	<field name="CompanyName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CompanyName"/>
+		<property name="com.jaspersoft.studio.field.label" value="CompanyName"/>
+	</field>
+	<background>
+		<band height="822" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="722" width="105" height="100" forecolor="#666666" backcolor="#666666" uuid="58048a65-569d-454e-b6dd-f3bb46c94ee3"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000" uuid="0f40ce36-78f2-49e5-adf5-8855d6516e74"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000" uuid="e06a687c-0f3f-4451-a45e-f88c505ba589"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" uuid="ab96a4b0-8a0d-4ae2-8695-16868926ec2b"/>
+				</line>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="152" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="555" height="115" uuid="524767a9-e7e5-4041-9b08-5a7210b38e22"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="40" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Отчет по прибыли турагенств]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="5" width="555" height="20" backcolor="#666666" uuid="eb0fefed-b830-492b-a0c9-ec23411537a7"/>
+				<staticText>
+					<reportElement x="0" y="0" width="160" height="20" uuid="ad9eecf6-d115-4973-9152-2dc22760172f"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Buking Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="160" y="0" width="140" height="20" uuid="65a84a5c-d5b9-41e1-8306-91bafb265650"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Profit]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="300" y="0" width="154" height="20" uuid="a1031087-0f0b-4624-94cc-d9602c42eb7e"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Company]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="455" y="0" width="100" height="20" uuid="acfff53b-4044-4f9d-af6c-0c30fd1d2e75"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Total profit ]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="1" width="555" height="29" uuid="5d75be3e-ea39-4b96-baf8-b49497315044"/>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="-1" y="19" width="555" height="7" uuid="2b97af27-2a1e-491f-a0f4-b2549a3510ee"/>
+					<graphicElement>
+						<pen lineWidth="0.5" lineColor="#999999"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement x="0" y="-1" width="160" height="20" uuid="50f6e328-7d65-4813-ae1c-52d0bd75a7b6"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{BukingDate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="160" y="-1" width="140" height="20" uuid="60f3e387-4924-4f4c-8fc4-9764838b451d"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{FinalPrice}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="300" y="-1" width="154" height="20" uuid="9476832c-327b-4761-a5af-9ede95f261fe"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{CompanyName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="455" y="-1" width="100" height="20" uuid="e08b0f30-712e-4438-9634-6dde33606fe2"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{Profit}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="100" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="424" y="0" width="131" height="20" forecolor="#000000" uuid="f8570c2f-4404-4725-885a-4eb3c26abb4a"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

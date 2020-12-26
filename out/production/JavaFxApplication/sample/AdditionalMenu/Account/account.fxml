@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="363.0" stylesheets="@../../App/app.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="52.0" prefHeight="87.0" prefWidth="363.0" style="-fx-background-color: #2e3f4a;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="goToTursButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onGoToTursButtonClick" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+               <graphic>
+                  <ImageView fx:id="goBackButton" fitHeight="41.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" styleClass="app-menu-burger">
+                     <image>
+                        <Image url="@../../assets/left-arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label layoutX="131.0" layoutY="20.0" prefHeight="41.0" prefWidth="218.0" text="Your Account" textFill="WHITE" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font name="Arial" size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="87.0" prefHeight="382.0" prefWidth="363.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="87.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" prefHeight="382.0" prefWidth="363.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <GridPane prefHeight="404.0" prefWidth="363.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="145.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="218.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="loginField" prefHeight="26.0" prefWidth="282.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="nameField" prefHeight="26.0" prefWidth="287.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="passportField" prefHeight="26.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="ageField" prefHeight="26.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="phoneField" prefHeight="26.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <ComboBox fx:id="kinOfPaymentComboBox" prefHeight="25.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </ComboBox>
+                        <Label fx:id="idLabel" prefHeight="20.0" prefWidth="63.0" text="idLabel" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="99.0" text="id">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="158.0" text="Login" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="146.0" text="Passport" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="145.0" text="Password" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" text="Confirm password" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="173.0" text="Age" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="159.0" text="Phone" GridPane.rowIndex="7">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" text="Kind of Payment" GridPane.rowIndex="8">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="166.0" text="Name" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </PasswordField>
+                        <PasswordField fx:id="confirmPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </PasswordField>
+                        <VBox prefHeight="70.0" prefWidth="218.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <children>
+                              <Label fx:id="errorMessage" alignment="TOP_LEFT" opacity="0.0" prefHeight="33.0" prefWidth="139.0" wrapText="true">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Button fx:id="editButton" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="32.0" prefWidth="136.0" text="Edit" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Button fx:id="supportButton" alignment="CENTER" contentDisplay="CENTER" layoutX="299.0" layoutY="455.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="41.0" style="-fx-font-size: 0;" styleClass="button-support" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="13.0">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets/question.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

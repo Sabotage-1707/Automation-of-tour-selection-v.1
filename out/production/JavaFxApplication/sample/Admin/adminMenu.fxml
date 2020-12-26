@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="1200.0" stylesheets="@AdminMenu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="6.0" prefHeight="504.0" prefWidth="200.0" style="-fx-background-color: #000034;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="deleteEntry" layoutX="40.0" layoutY="456.0" mnemonicParsing="false" onAction="#Delete" prefHeight="30.0" prefWidth="120.0" styleClass="button-delete" text="Delete" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+            <Button fx:id="updateEntry" layoutX="40.0" layoutY="414.0" mnemonicParsing="false" onAction="#Edit" prefHeight="30.0" prefWidth="120.0" styleClass="button-update" text="Update" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+            <Button fx:id="addNewEntry" layoutX="40.0" layoutY="370.0" mnemonicParsing="false" onAction="#handleAddNewEntryButton" prefHeight="30.0" prefWidth="120.0" styleClass="button-add" text="Add" AnchorPane.bottomAnchor="104.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+            <VBox fx:id="clientsFields" layoutX="14.0" layoutY="14.0" prefHeight="342.0" prefWidth="166.0" spacing="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_Login" promptText="Login" />
+                  <TextField fx:id="txt_ClientName" promptText="Name" />
+                  <TextField fx:id="txt_Passport" promptText="Passport" />
+                  <TextField fx:id="txt_Password" promptText="Password" />
+                  <TextField fx:id="txt_Age" promptText="Age" />
+                  <TextField fx:id="txt_ClientIdPayment" promptText="IdPayment" />
+                  <TextField fx:id="txt_phone" promptText="Phone" />
+               </children>
+            </VBox>
+            <VBox fx:id="companiesFields" prefHeight="342.0" prefWidth="166.0" spacing="15.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_CompanyName" promptText="Name" />
+                  <TextField fx:id="txt_CompanyProfit" promptText="Profit" />
+                  <TextField fx:id="txt_CompanyAdres" promptText="Adres" />
+               </children>
+            </VBox>
+            <VBox fx:id="countriesFields" prefHeight="342.0" prefWidth="166.0" spacing="15.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_CountryName" promptText="Name" />
+                  <TextArea fx:id="txt_CountrySigns" prefHeight="200.0" prefWidth="200.0" promptText="Signs" wrapText="true" />
+               </children>
+            </VBox>
+            <VBox fx:id="tourFields" prefHeight="321.0" prefWidth="170.0" spacing="10.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_HotelName" promptText="Hotel Name" />
+                  <TextField fx:id="txt_Ecscursions" promptText="Ecscursions" />
+                  <TextField fx:id="txt_TourDateStart" promptText="Date Start" />
+                  <TextField fx:id="txt_TourDateFinish" promptText="Date Finish" />
+                  <TextField fx:id="txt_TourPrice" promptText="Price" />
+                  <TextField fx:id="txt_TourPhoto" promptText="Photo" />
+                  <HBox prefHeight="28.0" prefWidth="170.0" spacing="5.0">
+                     <children>
+                        <TextField fx:id="txt_TourIdHotel" prefHeight="25.0" prefWidth="84.0" promptText="id Hotel" />
+                        <TextField fx:id="txt_TourIdCountry" prefHeight="25.0" prefWidth="86.0" promptText="id Country" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="28.0" prefWidth="170.0" spacing="5.0">
+                     <children>
+                        <TextField fx:id="txt_TourIdDiscount" prefHeight="25.0" prefWidth="84.0" promptText="id Discount" />
+                        <TextField fx:id="txt_TourIdFood" prefHeight="25.0" prefWidth="86.0" promptText="id Food" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="18.0" prefWidth="170.0" spacing="5.0">
+                     <children>
+                        <TextField fx:id="txt_TourIdTransit" prefHeight="25.0" prefWidth="90.0" promptText="id Transit" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="tursOfClientsFields" prefHeight="342.0" prefWidth="166.0" spacing="15.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_ToursOfClientsIdClient" promptText="id Client" />
+                  <TextField fx:id="txt_ToursOfClientsIdTure" promptText="id Ture" />
+                  <TextField fx:id="txt_ToursOfClientsCounterPeople" promptText="Counter People" />
+                  <TextField fx:id="txt_ToursOfClientsCounterLess14yo" promptText="Counter less 14 y.o." />
+                  <TextField fx:id="txt_ToursOfClientsBukingDate" promptText="Buking Date" />
+                  <TextField fx:id="txt_ToursOfClientsFinalPrice" promptText="Final Price" />
+               </children>
+            </VBox>
+            <VBox fx:id="tursOfCompaniesFields" prefHeight="342.0" prefWidth="166.0" spacing="15.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_ToursOfCompaniesIdCompany" promptText="id Client" />
+                  <TextField fx:id="txt_ToursOfCompaniesIdTure" promptText="id Ture" />
+                  <TextField fx:id="txt_ToursOfCompaniesCounter" promptText="Counter People" />
+               </children>
+            </VBox>
+            <VBox fx:id="viewsOfDiscountsFields" prefHeight="342.0" prefWidth="166.0" spacing="15.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_viewsOfDiscountsNameOfDiscount" promptText="Name of discount" />
+                  <TextField fx:id="txt_viewsOfDiscountsPercentsOfDiscount" promptText="Percents of discount" />
+               </children>
+            </VBox>
+            <VBox fx:id="viewsOfFoodFields" prefHeight="342.0" prefWidth="166.0" spacing="15.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_viewsOfFoodName" promptText="Name of Food" />
+               </children>
+            </VBox>
+            <VBox fx:id="viewsOfHotelsFields" prefHeight="342.0" prefWidth="166.0" spacing="15.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_viewsOfHotelsClass" promptText="Hotel Class" />
+               </children>
+            </VBox>
+            <VBox fx:id="viewsOfPaymentsFields" prefHeight="342.0" prefWidth="166.0" spacing="15.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_viewsOfPaymentName" promptText="Name of Payment" />
+               </children>
+            </VBox>
+            <VBox fx:id="viewsOfTransitsFields" prefHeight="342.0" prefWidth="166.0" spacing="15.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <TextField fx:id="txt_viewsOfTransitName" promptText="Name of transit" />
+               </children>
+            </VBox>
+            <Button fx:id="supportButton" layoutX="170.0" layoutY="471.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" styleClass="button-support" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="3.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/question.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TabPane fx:id="tabPane1" layoutX="200.0" layoutY="14.0" prefHeight="504.0" prefWidth="1050.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab fx:id="clientsTab" text="Clients">
+            <content>
+              <AnchorPane fx:id="ClientsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="clientsTable" onMouseClicked="#getSelected" prefHeight="475.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="clientsIdColumn" minWidth="44.0" prefWidth="44.0" text="id" />
+                            <TableColumn fx:id="clientsLoginColumn" minWidth="40.0" prefWidth="119.99996948242188" text="Login" />
+                              <TableColumn fx:id="clientsNameColumn" minWidth="40.0" prefWidth="257.0" text="Name" />
+                              <TableColumn fx:id="clientsPassportColumn" minWidth="70.0" prefWidth="164.0" text="Passport" />
+                              <TableColumn fx:id="clientsPasswordColumn" minWidth="70.0" prefWidth="118.0" text="Password" />
+                              <TableColumn fx:id="clientsAgeColumn" minWidth="30.0" prefWidth="37.0" text="Age" />
+                              <TableColumn fx:id="clientsidPaymentColumn" minWidth="47.0" prefWidth="66.0" text="IdPayment" />
+                              <TableColumn fx:id="clientsPhoneColumn" minWidth="40.0" prefWidth="193.0" text="Phone" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="companiesTab" text="Companies">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="companiesTable" onMouseClicked="#getSelected" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="companiesIdColumn" minWidth="44.0" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="companiesNameColumn" minWidth="100.0" prefWidth="260.9999694824219" text="CompanyName" />
+                              <TableColumn fx:id="companiesProfitColumn" minWidth="80.0" prefWidth="246.0" text="Profit" />
+                              <TableColumn fx:id="companiesAdresColumn" minWidth="200.0" prefWidth="467.0" text="CompanyAdres" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="countriesTab" text="Countries">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="countriesTable" onMouseClicked="#getSelected" prefHeight="315.0" prefWidth="481.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="countriesIdColumn" minWidth="44.0" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="countriesNameColumn" minWidth="120.0" prefWidth="244.0" text="CountryName" />
+                              <TableColumn fx:id="countriesSignsColumn" minWidth="300.0" prefWidth="680.0" text="SignsCountry" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tursTab" text="Turs">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tursTable" layoutX="7.0" layoutY="6.0" onMouseClicked="#getSelected" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="TursIdColumn" minWidth="31.0" prefWidth="31.0" text="id" />
+                            <TableColumn fx:id="TursHotelNameColumn" minWidth="90.0" prefWidth="119.0" text="HotelName" />
+                              <TableColumn fx:id="TursEcscursionsColumn" minWidth="90.0" prefWidth="127.0" text="Ecscursions" />
+                              <TableColumn fx:id="TursDateStartColumn" minWidth="80.0" prefWidth="107.0" text="DateStart" />
+                              <TableColumn fx:id="TursDateFinishColumn" minWidth="80.0" prefWidth="152.0" text="DateFinish" />
+                              <TableColumn fx:id="TursPriceColumn" minWidth="60.0" prefWidth="92.0" text="Price" />
+                              <TableColumn fx:id="TursPhotoColumn" minWidth="44.0" prefWidth="44.0" text="Photo" />
+                              <TableColumn fx:id="TursIdHotelColumn" minWidth="44.0" prefWidth="47.0" text="IdHotel" />
+                              <TableColumn fx:id="TursIdCountryColumn" minWidth="62.0" prefWidth="62.0" text="IdCountry" />
+                              <TableColumn fx:id="TursIdDiscountColumn" minWidth="66.0" prefWidth="66.0" text="IdDiscount" />
+                              <TableColumn fx:id="TursIdFoodColumn" minWidth="44.0" prefWidth="45.0" text="IdFood" />
+                              <TableColumn fx:id="TursIdTransitColumn" minWidth="56.0" prefWidth="56.0" text="IdTransit" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tursOfClientsTab" text="TursOfClients">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tursOfClientsTable" layoutX="21.0" layoutY="14.0" onMouseClicked="#getSelected" prefHeight="428.0" prefWidth="1000.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="TursOfClientsIdColumn" minWidth="44.0" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="TursOfClientsIdClientColumn" minWidth="64.0" prefWidth="87.0" text="IdClient" />
+                              <TableColumn fx:id="TursOfClientsIdTureColumn" minWidth="44.0" prefWidth="113.0" text="IdTure" />
+                              <TableColumn fx:id="TursOfClientsCounterPeopleColumn" minWidth="120.0" prefWidth="167.0" text="CounterPeople" />
+                              <TableColumn fx:id="TursOfClientsCounterLess14yoColumn" minWidth="130.0" prefWidth="215.0" text="CounterLess14yo" />
+                              <TableColumn fx:id="TursOfClientsBukingDateColumn" minWidth="184.0" prefWidth="184.0" text="BukingDate" />
+                              <TableColumn fx:id="TursOfClientsFinalPriceColumn" prefWidth="158.0" text="FinalPrice" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="886.0" layoutY="432.0" mnemonicParsing="false" onAction="#setIsBurningTrue" prefHeight="30.0" prefWidth="100.0" styleClass="button-tours" text="Burning Tours" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="14.0" />
+                        <Button layoutX="754.0" layoutY="432.0" mnemonicParsing="false" onAction="#setIsBurningFalse" prefHeight="30.0" prefWidth="117.0" styleClass="button-tours" text="All the Tours" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="129.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tursOfCompaniesTab" text="TursOfCompanies">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tursOfCompaniesTable" onMouseClicked="#getSelected" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="TursOfCompaniesIdColumn" minWidth="44.0" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="TursOfCompaniesIdCompanyColumn" minWidth="84.0" prefWidth="116.0" text="IdCompany" />
+                              <TableColumn fx:id="TursOfCompaniesIdTureColumn" minWidth="44.0" prefWidth="91.0" text="IdTure" />
+                              <TableColumn fx:id="TursOfCompaniesCounterColumn" minWidth="100.0" prefWidth="717.0" text="Counter" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="viewsOfDiscountsTab" text="ViewsOfDiscounts">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="viewsOfDiscountsTable" layoutX="64.0" onMouseClicked="#getSelected" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="ViewsOfDiscountsIdColumn" minWidth="44.0" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="ViewsOfDiscountsNameColumn" minWidth="200.0" prefWidth="744.0" text="NameOfDiscount" />
+                              <TableColumn fx:id="ViewsOfDiscountsPercentsColumn" minWidth="60.0" prefWidth="180.0" text="PercentsOfDiscount" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="viewsOfFoodTab" text="ViewsOfFood">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="viewsOfFoodTable" onMouseClicked="#getSelected" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="ViewsOfFoodIdColumn" minWidth="44.0" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="ViewsOfFoodNameColumn" minWidth="200.0" prefWidth="924.0" text="Name" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="viewsOfHotelsTab" text="ViewsOfHotels">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="viewsOfHotelsTable" layoutX="7.0" layoutY="8.0" onMouseClicked="#getSelected" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="ViewsOfHotelsIdColumn" minWidth="44.0" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="ViewsOfHotelsClassColumn" minWidth="200.0" prefWidth="924.0" text="HotelClass" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="viewsOfPaymentsTab" text="ViewsOfPayments">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="viewsOfPaymentsTable" onMouseClicked="#getSelected" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="ViewsOfPaymentsIdColumn" minWidth="44.0" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="ViewsOfPaymentsNameColumn" minWidth="200.0" prefWidth="924.0" text="Name" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="viewsOfTransitsTab" text="ViewsOfTransits">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="viewsOfTransitsTable" onMouseClicked="#getSelected" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="ViewsOfTransitsIdColumn" minWidth="44.0" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="ViewsOfTransitsNameColumn" minWidth="200.0" prefWidth="924.0" text="Name" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="reportsTab" text="Reports">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="53.0" layoutY="35.0" mnemonicParsing="false" onAction="#showFirstReport" prefHeight="75.0" prefWidth="851.0" styleClass="button-report" text="Показать отчет о всех забронированных ранее турах" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="35.0">
+                           <font>
+                              <Font name="Arial" size="35.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="54.0" layoutY="127.0" mnemonicParsing="false" onAction="#showSecondReport" prefHeight="75.0" prefWidth="851.0" styleClass="button-report" text="Показать отчет о забронированных турах на следующий квартал" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="127.0">
+                           <font>
+                              <Font name="Arial" size="35.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="54.0" layoutY="220.0" mnemonicParsing="false" onAction="#showThirdReport" prefHeight="75.0" prefWidth="851.0" styleClass="button-report" text="Показать отчет о прибыли турагенств" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="95.0">
+                           <font>
+                              <Font name="Arial" size="35.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

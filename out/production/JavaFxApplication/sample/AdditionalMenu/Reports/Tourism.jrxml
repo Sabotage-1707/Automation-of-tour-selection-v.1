@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Tourism" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="e9bb1a27-f975-4aa4-98f9-75524c5daafa">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TourismAdapter"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select TursOfClients.id , Clients.Name, CounterPeople, 
+ CounterLess14yo, dbo."TursOfClients"."BukingDate"  , IdTure, FinalPrice, DateStart,
+ DateFinish from  "TursOfClients" join "Clients" on(Clients.id =TursOfClients.IdClient)
+ join  "Turs" on ( TursOfClients.IdTure = Turs.id) Order By BukingDate]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+	</field>
+	<field name="CounterPeople" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="CounterPeople"/>
+		<property name="com.jaspersoft.studio.field.label" value="CounterPeople"/>
+	</field>
+	<field name="CounterLess14yo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="CounterLess14yo"/>
+		<property name="com.jaspersoft.studio.field.label" value="CounterLess14yo"/>
+	</field>
+	<field name="BukingDate" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BukingDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="BukingDate"/>
+	</field>
+	<field name="IdTure" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IdTure"/>
+		<property name="com.jaspersoft.studio.field.label" value="IdTure"/>
+	</field>
+	<field name="FinalPrice" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="FinalPrice"/>
+		<property name="com.jaspersoft.studio.field.label" value="FinalPrice"/>
+	</field>
+	<field name="DateStart" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="DateStart"/>
+		<property name="com.jaspersoft.studio.field.label" value="DateStart"/>
+	</field>
+	<field name="DateFinish" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="DateFinish"/>
+		<property name="com.jaspersoft.studio.field.label" value="DateFinish"/>
+	</field>
+	<background>
+		<band height="822" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="722" width="105" height="100" forecolor="#666666" backcolor="#666666" uuid="58048a65-569d-454e-b6dd-f3bb46c94ee3"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000" uuid="0f40ce36-78f2-49e5-adf5-8855d6516e74"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000" uuid="e06a687c-0f3f-4451-a45e-f88c505ba589"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" uuid="ab96a4b0-8a0d-4ae2-8695-16868926ec2b"/>
+				</line>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="152" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="555" height="115" uuid="524767a9-e7e5-4041-9b08-5a7210b38e22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Отчет по клиентам купившим тур ранее]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="5" width="570" height="35" backcolor="#666666" uuid="eb0fefed-b830-492b-a0c9-ec23411537a7"/>
+				<staticText>
+					<reportElement style="Column header" x="8" y="0" width="22" height="15" uuid="965a605d-db93-45ff-aca3-f43c51dde816">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31ecef6c-a5bb-43d0-8e86-2ee5033c8f6e"/>
+					</reportElement>
+					<text><![CDATA[id]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="80" y="0" width="50" height="15" uuid="3371d049-50bd-4503-8d22-1205505bf018">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6f1938b5-00ab-460b-8b0a-66b32b222471"/>
+					</reportElement>
+					<text><![CDATA[Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="190" y="0" width="50" height="35" uuid="132ca153-24ad-4c36-a18e-7ce3d67ce671">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00fbd342-c154-444a-ab4a-03356cb9fad0"/>
+					</reportElement>
+					<text><![CDATA[CounterPeople]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="240" y="0" width="50" height="35" uuid="d85fc911-51ba-4f25-9733-e60b3073cfd2">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e474bb07-0505-4186-abb1-32b1e915b203"/>
+					</reportElement>
+					<text><![CDATA[Counter Children]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="290" y="0" width="68" height="35" uuid="07d37a1f-aae0-44ea-bf78-7ae0e9abd189">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c9ff1c1e-85c4-488a-8cd1-4b6640232e35"/>
+					</reportElement>
+					<text><![CDATA[Buking Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="360" y="0" width="20" height="30" uuid="d8214635-de88-4cc9-bea2-c6f9b76a90a3">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="80a3c2a7-c126-414a-8968-5c8d19de12ce"/>
+					</reportElement>
+					<text><![CDATA[IdTure]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="391" y="0" width="33" height="45" uuid="0b2f5646-9771-4542-8583-52154d79ce2b">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="035d8f22-124e-4e7d-9bd8-9f094e70e7c2"/>
+					</reportElement>
+					<text><![CDATA[Final Price]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="435" y="0" width="60" height="35" uuid="914e4d77-ce59-48cf-a2ed-94d8f343d771">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b156904e-fabe-44be-8445-69c28f41b6a8"/>
+					</reportElement>
+					<text><![CDATA[DateStart]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="500" y="0" width="70" height="30" uuid="ae76299e-5ff5-424d-a051-ba9da7781b97">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ae51b62-8b76-4256-9a01-a78561e4841e"/>
+					</reportElement>
+					<text><![CDATA[DateFinish]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="1" width="570" height="15" uuid="5d75be3e-ea39-4b96-baf8-b49497315044"/>
+				<textField>
+					<reportElement style="Detail" x="0" y="0" width="30" height="15" uuid="1533ed58-6bf5-4ca9-96fc-b48846ba4f82">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31ecef6c-a5bb-43d0-8e86-2ee5033c8f6e"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="42" y="0" width="148" height="15" uuid="b8ef9ef2-af09-4a37-b9fc-94f3d1dab87d">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6f1938b5-00ab-460b-8b0a-66b32b222471"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="191" y="-1" width="49" height="15" uuid="cff072fb-dd3d-4cf8-9c6c-f31a09902c19">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00fbd342-c154-444a-ab4a-03356cb9fad0"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{CounterPeople}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="241" y="-1" width="49" height="15" uuid="f101b1af-a6a2-47f1-afb9-541c4900225f">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e474bb07-0505-4186-abb1-32b1e915b203"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{CounterLess14yo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="290" y="0" width="68" height="15" uuid="ef8152c4-3b98-46c8-976b-2c235d0436f2">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c9ff1c1e-85c4-488a-8cd1-4b6640232e35"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{BukingDate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="360" y="0" width="20" height="15" uuid="f7eb34b5-a818-4a59-9824-fd1a26be7ae5">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="80a3c2a7-c126-414a-8968-5c8d19de12ce"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{IdTure}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="390" y="0" width="40" height="15" uuid="c40c3e0a-4ce4-4593-83f1-5258a8d18e37">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="035d8f22-124e-4e7d-9bd8-9f094e70e7c2"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{FinalPrice}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="430" y="0" width="70" height="15" uuid="1baaeec4-34d3-4dec-9cff-ef1c7574e740">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b156904e-fabe-44be-8445-69c28f41b6a8"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{DateStart}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="503" y="0" width="67" height="15" uuid="bd549279-c071-4f30-9292-d942202dd65c">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ae51b62-8b76-4256-9a01-a78561e4841e"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{DateFinish}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="16" width="555" height="1" uuid="2b97af27-2a1e-491f-a0f4-b2549a3510ee"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<frame>
+				<reportElement mode="Opaque" x="465" y="16" width="105" height="19" backcolor="#666666" uuid="c73b6cdd-ff31-4458-bcdc-8fa1d15836c8"/>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="475" y="15" width="100" height="15" uuid="e97e5f94-1d06-44dc-9c43-40925c697b7f"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
